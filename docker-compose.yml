@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  web:
+    build: .
+    volumes:
+      - .:/var/www/html
+      - ./docker/sites-enabled/:/etc/apache2/sites-enabled/
+    depends_on:
+      - db
+  db:
+    image: mysql:5.7
+    environment:
+      TZ: "UTC"
+    volumes:
+      - db-data:/var/lib/mysql
+volumes:
+  db-data:
