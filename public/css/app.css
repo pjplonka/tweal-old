@@ -1,0 +1,104 @@
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  color: #2c3e50;
+}
+#app .pointer {
+  cursor: pointer;
+}
+#app .wrapper {
+  display: flex;
+  background-color: #f5f7fb;
+  min-height: 600px;
+}
+#app .wrapper .main {
+  width: 100%;
+}
+#app .wrapper .main .top {
+  height: 65px;
+  text-align: center;
+  line-height: 65px;
+  background-color: aliceblue;
+}
+
+#nav {
+  text-align: center;
+  padding: 30px;
+}
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.errors {
+  font-size: 80%;
+  color: red;
+}
+
+.aside {
+  width: 250px;
+  background-color: #191f2c;
+}
+.aside .top {
+  height: 65px;
+  text-align: center;
+  line-height: 65px;
+  background-color: #222732;
+  color: aquamarine;
+}
+.aside ul {
+  list-style: none;
+  padding: 20px 0 0 0;
+  margin: 0;
+}
+.aside li .router-link-exact-active {
+  background-color: #272d3b;
+}
+.aside a {
+  display: block;
+  color: #f3f3f3;
+  padding: 10px 23px;
+  font-size: 90%;
+}
+.aside .icon {
+  color: #aeaeae;
+}
+.aside a:hover {
+  background-color: #262e3f;
+  text-decoration: none;
+}
+
+.custom-table td, .custom-table th {
+  border: none;
+}
+.custom-table tr td {
+  border-bottom: 1px solid #eaeaea !important;
+}
+.custom-table tr th {
+  font-size: 80%;
+  text-transform: uppercase;
+  color: #bcc0c5;
+  border-bottom: 1px solid #eaeaea !important;
+}
+
+.card {
+  border: none;
+  border-radius: 0;
+}
+.card .card-header {
+  border-bottom: 1px solid #eeeeee;
+  background-color: white;
+  padding: 1.25rem;
+}
+
+.card-footer {
+  border-top: 1px solid #eeeeee;
+  background-color: white;
+  padding: 1.25rem;
+}
