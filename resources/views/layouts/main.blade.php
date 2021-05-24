@@ -23,6 +23,10 @@
     <!-- Custom CSS -->
     <link href="/css/app.css" rel="stylesheet">
 
+    <!-- Redactor -->
+    <link rel="stylesheet" href="/redactor/redactor.css"/>
+    <script src="/redactor/redactor.js"></script>
+
 </head>
 <body>
 <div id="app">
@@ -52,6 +56,10 @@
                 event.preventDefault()
             }
         })
+    });
+
+    $R('.redactor', {
+        minHeight: '300px'
     });
 </script>
 
