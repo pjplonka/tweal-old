@@ -2,12 +2,12 @@
     <label for="{{ $id }}">{{ $label }}</label>
     <select class="form-control" id="{{ $id }}" name="{{ $id }}">
         @if (isset($default))
-            <option value="">Select a company</option>
+            <option value="">{{ $default }}</option>
         @endif
-        @foreach($companies as $company)
-            <option value="{{ $company->id }}"
-                    {{ $value == $company->id ? 'selected' : '' }}
-            >{{ $company->name }}</option>
+        @foreach($options as $option)
+            <option value="{{ $option['value'] }}"
+                {{ $value == $option['value'] ? 'selected' : '' }}
+            >{{ $option['label'] }}</option>
         @endforeach
     </select>
     @if ($errors->has($id))
