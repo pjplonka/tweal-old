@@ -21,6 +21,11 @@
             </a>
         </li>
         <li>
+            <a href="{{ route('images.index') }}">
+                Images
+            </a>
+        </li>
+        <li>
             <a href="">
                 Logout
             </a>
