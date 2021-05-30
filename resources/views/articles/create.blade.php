@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <div class="container">
+    <div class="container-fluid">
 
         <form method="POST" action="{{ route('articles.store') }}">
 

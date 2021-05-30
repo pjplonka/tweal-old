@@ -1,5 +1,5 @@
 <div class="form-group">
-    <textarea class="redactor" id="{{ $id }}" name="{{ $id }}">{{ $value }}</textarea>
+    <textarea class="redactor" id="{{ $id }}" name="{{ $id }}" placeholder="{{ $placeholder ?? '' }}">{{ $value }}</textarea>
     @if ($errors->has($id))
         <div class="errors">
             {{ $errors->first($id) }}
