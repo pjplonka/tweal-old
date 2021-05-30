@@ -24,5 +24,19 @@
                 ];
             })
         ])
+
+        @include('common.select', [
+            'id' => 'image_id',
+            'label' => 'Image',
+            'value' => old('image_id') ?: $article->image_id,
+            'default' => 'Select image',
+            'hint' => 'Feature image for article.',
+            'options' => $images->map(function($image) {
+                return [
+                    'value' => $image->id,
+                    'label' => $image->full_name,
+                ];
+            })
+        ])
     </div>
 </div>

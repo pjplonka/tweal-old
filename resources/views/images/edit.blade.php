@@ -16,6 +16,11 @@
                     <span>Edit image</span>
                 </div>
                 <div class="card-body">
+
+                    <div class="mb-4">
+                        <img src="{{ $image->renderPath() }}" width="300" />
+                    </div>
+
                     @include('images.form', ['edit' => true])
                 </div>
                 <div class="card-footer">
