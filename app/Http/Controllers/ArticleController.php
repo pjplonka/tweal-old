@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Category;
+use App\Models\Image;
 use Carbon\Carbon;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -24,6 +25,7 @@ class ArticleController extends Controller
         return view('articles.create', [
             'article' => new Article(),
             'categories' => Category::all(),
+            'images' => Image::all(),
         ]);
     }
 
@@ -31,12 +33,14 @@ class ArticleController extends Controller
     {
         $payload = $request->validate([
             'category_id' => 'required',
+            'image_id' => 'nullable|integer',
             'title' => 'required',
             'content' => 'string|nullable',
         ]);
 
         Article::create([
             'category_id' => $payload['category_id'],
+            'image_id' => $payload['image_id'],
             'title' => $payload['title'],
             'slug' => Str::slug($payload['title']),
             'content' => $payload['content'],
@@ -50,7 +54,8 @@ class ArticleController extends Controller
     {
         return view('articles.edit', [
             'article' => $article,
-            'categories' => Category::all()
+            'categories' => Category::all(),
+            'images' => Image::all(),
         ]);
     }
 
@@ -58,6 +63,7 @@ class ArticleController extends Controller
     {
         $payload = $request->validate([
             'category_id' => 'required',
+            'image_id' => 'nullable|integer',
             'title' => 'required',
             'slug' => 'required',
             'content' => 'string|nullable',
@@ -65,6 +71,7 @@ class ArticleController extends Controller
 
         $article->update([
             'category_id' => $payload['category_id'],
+            'image_id' => $payload['image_id'],
             'title' => $payload['title'],
             'slug' => Str::slug($payload['slug']),
             'content' => $payload['content'],

@@ -23,4 +23,9 @@ class Image extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function renderPath(): string
+    {
+        return 'data:image/' . $this->extension . ';base64,' . base64_encode($this->content);
+    }
 }

@@ -26,7 +26,7 @@
                         <tr>
                             <th scope="row">{{ $image->id }}</th>
                             <td>{{ $image->full_name }}</td>
-                            <td><img src="data:image/{{ $image->extension }};base64,{{ base64_encode($image->content) }}" width="100" /></td>
+                            <td><img src="{{ $image->renderPath() }}" width="100" /></td>
                             <td class="actions">
                                 <a href="{{ route('images.edit', ['image' => $image->id]) }}" class="mr-2"><i
                                         class="bi-pencil icon"></i></a>
